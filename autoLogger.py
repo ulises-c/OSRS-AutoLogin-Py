@@ -10,7 +10,10 @@ import time
 os.system('open /Applications/RuneLite.app')
 
 # Sleep to let RuneLite load
-time.sleep(30)
+time.sleep(20)
+
+# May work to bring window/app to front
+# os.system('''/usr/bin/osascript -e 'tell app "RuneLite" to set frontmost of process "Python" to true' ''')
 
 # To enter login screen
 auto.press('enter')
