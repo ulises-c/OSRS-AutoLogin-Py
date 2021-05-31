@@ -6,14 +6,13 @@ import pyautogui as auto
 import os
 import time
 
-# Open RuneLite on macOS
+import pygetwindow as gw
+
+# Open RuneLite on macOS, if already open it brings the window to the front
 os.system('open /Applications/RuneLite.app')
 
 # Sleep to let RuneLite load
 time.sleep(20)
-
-# May work to bring window/app to front
-# os.system('''/usr/bin/osascript -e 'tell app "RuneLite" to set frontmost of process "Python" to true' ''')
 
 # To enter login screen
 auto.press('enter')
