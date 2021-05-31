@@ -30,5 +30,5 @@ def login(username, password):
 """ MAIN """
 
 username = choose_user(user_list, alias_list)
-checkRunning.activate_runelite()
+checkRunning.activate_runelite() # Only for macOS
 login(username, passwords[username])
