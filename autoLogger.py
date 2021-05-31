@@ -18,6 +18,17 @@ def choose_user(user_list):
     print("Selected: {}, {}".format(entry, user_list[entry]))
     return user_list[entry]
 
+def activate_runelite(rl_status):
+    if(not rl_status):
+        # Open RuneLite on macOS, if already open it brings the window to the front
+        os.system('open ' + macRuneLite)
+
+        # Sleep to let RuneLite load
+        time.sleep(20)
+
+    elif(rl_status):
+        os.system('open ' + macRuneLite)
+
 def login(username, password):
     # To enter login screen
     auto.press('enter')
@@ -29,17 +40,6 @@ def login(username, password):
     # To write password
     auto.write(password)
     auto.press('enter')
-
-def activate_runelite(rl_status):
-    if(not rl_status):
-        # Open RuneLite on macOS, if already open it brings the window to the front
-        os.system('open ' + macRuneLite)
-
-        # Sleep to let RuneLite load
-        time.sleep(20)
-
-    elif(rl_status):
-        os.system('open ' + macRuneLite)
 
 """ MAIN """
 
