@@ -1,33 +1,19 @@
 # Retrieve Usernames and Passwords
 from user_pass import user_pass_dict as passwords
-from user_pass import user_list as usernames
-from checkRunning import rl_running
+from user_pass import user_list
+from user_pass import alias_list
+import checkRunning
 
-import pygetwindow as gw
+# import pygetwindow as gw # May be used in Windows, not useful in macOS
 import pyautogui as auto
-import os
-import time
 
-macRuneLite = '/Applications/RuneLite.app'
-
-def choose_user(user_list):
+def choose_user(usernames, aliases):
     print('\nList of usernames:')
-    for i in range(len(user_list)):
-        print("{}: {}".format(i, user_list[i]))
+    for i in range(len(aliases)):
+        print("{}: {}".format(i, aliases[i]))
     entry = (int)(input('\nEnter the number of the user you want to log into: '))
-    print("Selected: {}, {}".format(entry, user_list[entry]))
-    return user_list[entry]
-
-def activate_runelite(rl_status):
-    if(not rl_status):
-        # Open RuneLite on macOS, if already open it brings the window to the front
-        os.system('open ' + macRuneLite)
-
-        # Sleep to let RuneLite load
-        time.sleep(20)
-
-    elif(rl_status):
-        os.system('open ' + macRuneLite)
+    print("Selected: {}, {}".format(entry, aliases[entry]))
+    return usernames[entry]
 
 def login(username, password):
     # To enter login screen
@@ -43,6 +29,6 @@ def login(username, password):
 
 """ MAIN """
 
-username = choose_user(usernames)
-activate_runelite(rl_running)
+username = choose_user(user_list, alias_list)
+checkRunning.activate_runelite()
 login(username, passwords[username])

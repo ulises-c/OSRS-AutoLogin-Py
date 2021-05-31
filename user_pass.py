@@ -5,6 +5,7 @@ load_dotenv('.env')
 
 user_pass_dict = {}
 user_list = []
+alias_list = ['main', 'alt', 'iron']
 
 main_user = os.getenv('main_user')
 user_list.append(main_user)
