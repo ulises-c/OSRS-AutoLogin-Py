@@ -4,10 +4,15 @@ import os
 load_dotenv('.env')
 
 user_pass_dict = {}
+user_list = []
+
 main_user = os.getenv('main_user')
+user_list.append(main_user)
 user_pass_dict[main_user] = os.getenv('main_pass')
+
 alt_user = os.getenv('alt_user')
-user_pass_dict['alt_user']=os.getenv('alt_pass')
+user_pass_dict[alt_user]=os.getenv('alt_pass')
+user_list.append(alt_user)
 
 """
 To use this create a file called '.env'

@@ -1,19 +1,24 @@
 # Retrieve Usernames and Passwords
-from user_pass import user_pass_dict
+from user_pass import user_pass_dict as passwords
+from user_pass import user_list as usernames
 
 import pyautogui as auto
 import os
 import time
 
-username = 'testing1'
-password = 'testing2'
+# Open RuneLite on macOS
+os.system('open /Applications/RuneLite.app')
 
-os.system("open /Applications/RuneLite.app")
+# Sleep to let RuneLite load
+time.sleep(30)
 
-time.sleep(25)
-
+# To enter login screen
 auto.press('enter')
-auto.write(username)
+
+# To write user name
+auto.write(usernames[0])
 auto.press('enter')
-auto.write(password)
+
+# To write password
+auto.write(passwords[usernames[0]])
 auto.press('enter')
