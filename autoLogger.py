@@ -4,7 +4,7 @@ from user_pass import user_list
 from user_pass import alias_list
 import checkRunning
 
-# import pygetwindow as gw # May be used in Windows, not useful in macOS
+import pygetwindow as gw # May be used in Windows, not useful in macOS
 import pyautogui as auto
 
 def choose_user(usernames, aliases):
